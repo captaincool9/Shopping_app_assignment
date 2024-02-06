@@ -16,17 +16,22 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import coil.annotation.ExperimentalCoilApi
 import coil.compose.rememberImagePainter
 import com.example.shoppingapp.data.model.MovieResult
+import com.example.shoppingapp.viewmodel.MovieViewModel
 
 @Composable
 @OptIn(ExperimentalCoilApi::class)
 
-fun MovieItem(movie: MovieResult) {
+fun MovieItem(
+    movie: MovieResult,
+    movieViewModel: MovieViewModel = hiltViewModel()
+) {
 
     //var expanded by remember { mutableStateOf(false) }
-   // var dialogVisible by remember { mutableStateOf(false) }
+    // var dialogVisible by remember { mutableStateOf(false) }
 
     Card(
         modifier = Modifier
