@@ -22,7 +22,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.style.TextAlign
-import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import com.example.shoppingapp.data.model.MovieResult
 import com.example.shoppingapp.viewmodel.MovieViewModel
@@ -31,7 +31,7 @@ import com.example.shoppingapp.viewmodel.MovieViewModel
 @Composable
 fun HomeScreen(
     navController: NavHostController,
-    movieView: MovieViewModel = viewModel()
+    movieView: MovieViewModel = hiltViewModel()
 ) {
     LaunchedEffect(Unit) {
         movieView.getPopularMovies("9dc1885929623ca4136080285e58e5a9")
